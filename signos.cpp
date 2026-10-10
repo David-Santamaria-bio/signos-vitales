@@ -1,15 +1,19 @@
 #include <iostream>
-
-double fahrenheitACelsius(double fahrenheit) {
-    return (fahrenheit - 32) * 5.0 / 9.0;
+#include <string>
+std::string fecuencia(double n) {
+    if (n < 60) {
+        return "El paciente presenta bradicardia";
+    } else if (n > 100) {
+        return "El paciente presenta taquicardia";
+    } else {
+        return "El paciente presenta frecuencia cardíaca normal";
+    }
 }
 int main () {
-    double fahrenheit;
-    std::cout << "Ingrese la temperatura en grados Fahrenheit: ";
-    std::cin >> fahrenheit;
-
-    double celsius = fahrenheitACelsius(fahrenheit);
-    std::cout << fahrenheit << " grados Fahrenheit son " << celsius << " grados Celsius." << std::endl;
-
+    double frecuencia;
+    std::cout << "Ingrese la frecuencia cardíaca del paciente: ";
+    std::cin >> frecuencia;
+    std::string resultado = fecuencia(frecuencia);
+    std::cout << resultado << std::endl;
     return 0;
 }
